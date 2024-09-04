@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>People Directory</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/site.js" defer></script> <!-- Ensure script is loaded after DOM -->
+</head>
+<body>
+    <div class="tab-container">
+        <div class="tab">People Directory</div>
+    </div>
+    <div class="header-bar">
+        <div class="header-content">
+            <div class="box">
+                <span class="icon">&#128269;</span> <!-- Search icon (🔍) -->
+                <span class="text">Name/Id/Designation</span>
+            </div>
+            <div class="box">
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+                 <span class="fas fa-map-marker-alt"></span> Allocation
+            </div>
+            <div class="box"> 
+            <span class="icon">&#128196;</span> 
+            <span class="text">All Departments</span>
+            </div>
+            <button class="settings-button">&#9881;</button>  
+            <button class="clear-button">Clear</button> 
+        </div>
+    </div>
+    <div class="content">
+        <div class="employee-list">
+            <!-- Employee 1 -->
+            <div class="employee-card" onclick="showEmployeeDetails('John Doe', 'Software Engineer', '../Images/Akshaya.jpg')">
+                <img src="../Images/Akshaya.jpg" >
+                <div class="employee-details">
+                    <h3>John Doe</h3>
+                    <p>Software Engineer</p>
+                    <p>Development</p>
+                </div>
+            </div>
+            <div class="employee-card" onclick="showEmployeeDetails('Maria', 'Software Engineer', '../Images/Akshaya.jpg')">
+                <img src="../Images/Akshaya.jpg" >
+                <div class="employee-details">
+                    <h3>Maria</h3>
+                    <p>Software Engineer</p>
+                    <p>Development</p>
+                </div>
+            </div>
+            <div class="employee-card" onclick="showEmployeeDetails('Joy', 'Manager', '../Images/Akshaya.jpg')">
+                <img src="../Images/Akshaya.jpg" >
+                <div class="employee-details">
+                    <h3>Joy</h3>
+                    <p>Manager</p>
+                    <p>Production</p>
+                </div>
+            </div>
+
+            <!-- Employee 2 -->
+            <div class="employee-card" onclick="showEmployeeDetails('Jane Smith', 'Product Manager', '../Images/Akshaya.jpg')">
+                <img src="../Images/Akshaya.jpg" >
+                <div class="employee-details">
+                    <h3>Jane Smith</h3>
+                    <p>Product Manager</p>
+                    <p>Product</p>
+                </div>
+            </div>
+            <div class="employee-card" onclick="showEmployeeDetails('Sarah', 'Product Manager', '../Images/Akshaya.jpg')">
+                <img src="../Images/Akshaya.jpg" >
+                <div class="employee-details">
+                    <h3>sarah</h3>
+                    <p>Product Manager</p>
+                    <p>Product</p>
+                </div>
+            </div>
+            <div class="employee-card" onclick="showEmployeeDetails('Manuel', 'Team Lead', '../Images/Akshaya.jpg')">
+                <img src="../Images/Akshaya.jpg" >
+                <div class="employee-details">
+                    <h3>Manuel</h3>
+                    <p>Team Lead</p>
+                    <p>Department</p>
+                </div>
+            </div>
+            <div class="employee-card" onclick="showEmployeeDetails('Immanuel',  '../Images/Akshaya.jpg')">
+                <img src="../Images/Akshaya.jpg" >
+                <div class="employee-details">
+                    <h3>Immanuel</h3>
+                    <p>Product Manager</p>
+                    <p>Product</p>
+                </div>
+            </div>
+            <div class="employee-card" onclick="showEmployeeDetails('Jimmy', 'CTO', '../Images/Akshaya.jpg')">
+                <img src="../Images/Akshaya.jpg" >
+                <div class="employee-details">
+                    <h3>Jimmy</h3>
+                    <p>CTO</p>
+                    <p>Software</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div id="employeeNameContainer">
+                    <div id="employeeName"></div>
+                    <div id="employeeDesignation"></div>
+                    <div id="ratingStars" class="rating">
+                        <!-- Add stars here -->
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span class="star">&#9733;</span>
+                        <span> | 4.8</span>
+                    </div>
+                </div>
+                <span class="close">&times;</span>
+            </div>
+            <div id="img-container">
+                <img src="../Images/Akshaya.jpg" alt="Employee Image" class="modal-employee-img">
+                <div id="employeeNameContainer1">
+                    <div ><strong id="Address">Address:</strong>6B Newyork,Texas</div>
+                    <div><strong id="Exp">Total Experience:</strong>5 Years &nbsp;&nbsp;
+                        <strong id="In-house">In House Experience:</strong>2 Years</div>
+                        <div class="Team">Team:<strong class="Team-highlight">Digital Marketing Trainee</strong>
+                            Reporting Manager:<strong class="Reporting-highlight">Mikhel Edward</strong></div>
+                </div>
+            </div>
+
+                <div class="container">
+                  <div class="leave-summary">
+                <!-- Days Present Section -->
+                <div class="boxes">
+                    <div class="title">Days Present</div>
+                    <div class="number">29</div>
+                </div>
+                
+                <!-- Casual Leaves Section -->
+                <div class="boxes">
+                    <div class="title">Casual Leaves</div>
+                    <div class="leave-section">
+                        <div class="label">
+                            <div>Available</div>
+                            <div>10</div>
+                        </div>
+                        <div class="leave-bar available-bar"></div>
+                        <div class="label">
+                            <div>Taken</div>
+                            <div>1</div>
+                        </div>
+                        <div class="leave-bar taken-bar"></div>
+                    <div class="legend">
+                        <div><span class="available"></span>Available</div>
+                        <div><span class="taken"></span>Taken</div>
+                    </div>
+                </div>
+
+                </div>
+
+                <!-- Sick Leaves Section -->
+                <div class="boxes">
+                    <div class="title">Sick Leaves</div>
+                    <div class="leave-section">
+                        <div class="label">
+                            <div>Available</div>
+                            <div>10</div>
+                        </div>
+                        <div class="leave-bar available-bar" style="background-color: #9C27B0;"></div>
+                        <div class="label">
+                            <div>Taken</div>
+                            <div>2</div>
+                        </div>
+                        <div class="leave-bar taken-bar" style="background-color: #FF5722;"></div>
+                    <div class="legend">
+                        <div><span style="background-color: #9C27B0;"></span>Available</div>
+                        <div><span style="background-color: #FF5722;"></span>Taken</div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+
+    <!-- Leave Application Section -->
+    <div class="leave-applications">
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Leave Type</th>
+                    <th>Count</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>12/05/2024</td>
+                    <td>Casual Leave</td>
+                    <td>01</td>
+                    <td>✔️</td>
+                </tr>
+                <tr>
+                    <td>12/05/2024</td>
+                    <td>Sick Leave</td>
+                    <td>01</td>
+                    <td>↩️</td>
+                </tr>
+                <tr>
+                    <td>12/05/2024</td>
+                    <td>Sick Leave</td>
+                    <td>01</td>
+                    <td>↩️</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+  <div class="details-container">
+    <div class="notes-probation-salary">
+        <!-- Notes Section -->
+        <div class="notes-container">
+            <h3>Notes</h3>
+            <div class="note-item">
+                <strong>SARAH M</strong>
+                <p>Hi, Excellent presentation, Great Job.</p>
+                <span class="note-timestamp">13/07/2024 | 10:24 PM</span>
+            </div>
+            <div class="note-item">
+                <strong>Jean Sathre</strong>
+                <p>Hi, Excellent presentation, Great Job.</p>
+                <span class="note-timestamp">13/07/2024 | 10:24 PM</span>
+            </div>
+        </div>
+
+        <!-- Probation Section -->
+        <div class="probation-section">
+            <p class="probation-header">Probation</p>
+            <div class="probation-bar">
+                <div class="probation-progress" style="width: 30%;"></div>
+                <p class="probation-percentage">30%</p>
+            </div>
+        </div>
+
+        <!-- Salary Section -->
+        <div class="salary-section">
+            <p class="salary-header">Salary</p>
+            <div class="salary-details">
+                <div class="salary-item">
+                    <p class="salary-det">Accounting Accessible</p>
+                    <p class="salary-amount">₹50,000</p>
+                </div>
+                <div class="salary-item">
+                    <p class="salary-det">Accounting Payable</p>
+                    <p class="salary-amount">₹55,000</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Action Buttons -->
+    <div class="action-buttons">
+        <button class="unlock-user">UNLOCK USER</button>
+        <button class="view-profile">VIEW PROFILE</button>
+    </div>
+</div>
+    </div>
+</div>
+
+
+                <!-- Detailed information will be displayed here -->
+        </div>
+    </div>
+</body>
+</html>

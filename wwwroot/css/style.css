@@ -1,0 +1,573 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.tab-container {
+    width: 100%;
+    background-color: #007BFF;
+    padding: 5px;
+    text-align: left;
+}
+
+.header-bar {
+    display: flex;
+    background-color: #e1dfdf;
+    padding: 10px;
+}
+
+.text, .text1 {
+    color: black;
+    margin-left: 8px;
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    padding: 2px;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin: 0 10px;
+    box-sizing: border-box;
+}
+
+.header-content {
+    display: flex;
+    width: 100%; /* Adjusted to ensure full width */
+    justify-content: space-between;
+}
+
+.tab {
+    padding: 15px 30px;
+    color: white;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.settings-button {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-radius: 5px;
+    flex-grow: 1;
+    margin: 0 10px;
+}
+
+.content {
+    padding: 20px;
+}
+
+.employee-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.employee-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    text-align: center;
+    padding: 15px;
+    overflow: hidden;
+    cursor: pointer; /* Ensures cards are clickable */
+}
+
+.employee-card img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+.employee-details h3 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #1f06ae;
+}
+
+.employee-details p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 14px;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; 
+}
+
+/* .modal-content {
+    background-color: #fefefe;
+    margin: 11% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%;
+    height: 65%;
+    position: relative;
+} */
+
+
+.close {
+    position: absolute;
+    right: 20px;
+    top: 12px; /* Adjust the vertical position */
+    color: #aaa;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+/* .modal-header {
+    background-color: #d3d3d3; 
+    padding: 25px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    justify-content: flex-end; 
+    align-items: center;
+    width: 100%; 
+    box-sizing: border-box;
+} */
+.modal-content {
+    background-color: #fefefe;
+    margin: 8% auto; 
+    border: 1px solid #888;
+    width: 45%; 
+    height: 100%;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+.modal-header {
+    background-color: #d3d3d3;
+    padding: 10px;
+    border-bottom: 1px solid #888;
+    display: flex;
+    justify-content: space-between; /* Adjust this to align items as needed */
+    align-items: center;
+    width: 100%; 
+    box-sizing: border-box;
+}
+.modal-employee-img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 50px;
+    padding-bottom: 50px;
+    position:absolute;
+}
+
+#employeeDetails {
+    flex-grow: 1;
+    text-align: left;
+    padding-top: 10px;
+    background-color: black;
+    color: white;
+}
+
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+#employeeNameContainer ,#employeeNameContainer1 {
+    padding: 10px;
+    text-align: left; 
+    display: flex;
+    flex-direction: column;
+    align-items: left; 
+    margin-left: 110px; /* Move text to the right of the image */
+    font-size: 12px;
+}
+
+#img-container {
+    display: flex;
+    align-items: center;
+    padding: 20px 0; /* Space between the header and content */
+}
+#employeeName {
+    font-size: 28px;
+    font-weight: bold;
+    color: black;
+    position: relative;
+    text-align: left;
+}
+/* .modal-header #employeeName {
+    font-size: 25px;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+    position: relative;
+} */
+#employeeDesignation {
+    font-size: 15px;
+    color: black;
+    text-align: left;
+    width: 100%; 
+    position: relative;
+}
+#Address,#Exp,#In-house
+{
+    color: #269fe6;
+    
+}
+.Team
+{
+    text-align: left;
+    padding-right: 40px;
+}
+.Team-highlight
+{
+    background-color: rgb(135, 245, 135);
+}
+.Reporting-highlight
+{
+    background-color: #ede8e8;
+    color: rgb(178, 17, 17);
+}
+.rating {
+    margin-top: 10px; /* Space above the stars */
+}
+
+.star {
+    font-size: 20px; /* Adjust size as needed */
+    color: rgb(170, 151, 41); /* Star color */
+    margin: 0 2px; /* Space between stars */
+}
+.employee-modal-content p {
+    margin: 5px 0;
+    color: #666;
+    font-size: 16px;
+} 
+.employee-modal-content  {
+    background-color: red;
+    font-size: 16px;
+}
+#detail-info  {
+    font-size: 16px;
+    text-align: center;
+    height: 100%;
+}
+
+p{
+    color: white;
+}
+.container {
+    display: flex;
+    border: 1px solid #807c7c;
+    max-width: 290px;
+    border-radius: 8px;
+    padding: 5px;
+    justify-content: space-around; 
+    height: 22%;
+}
+.boxes {
+    flex: 1;
+    text-align: left;
+    padding-bottom: 40px;
+}
+.boxes:last-child {
+    border-right: none;
+}
+.title {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    top: 1;
+}
+.number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #1976D2;
+    margin-bottom: 15px;
+    width: 45px;
+    height: 63px;
+    padding-bottom: 40px;
+    top: 0;
+    text-align: center;
+    border: 1px solid #807c7c;
+}
+.leave-section {
+    margin-bottom: 10px;
+    width: 98%;
+    height: 100%;
+    padding-bottom: 5px;
+    top: 0;
+    border: 1px solid #807c7c;
+}
+
+.label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+.leave-bar {
+    height: 20px;
+    border-radius: 4px;
+    margin-bottom: 5px;
+    background-color: #ccc;
+}
+.available-bar {
+    background-color: #4CAF50;
+    width: 90%;
+}
+.taken-bar {
+    background-color: #F44336;
+    width: 10%;
+}
+.legend {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    margin-top: 10px;
+}
+.legend div {
+    display: flex;
+    align-items: center;
+}
+.legend span {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+.legend .available {
+    background-color: #4CAF50;
+}
+.legend .taken {
+    background-color: #F44336;
+}
+/* Table Styles */
+
+.leave-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.leave-applications {
+    width: 10%; /* Adjust width to your preference */
+    height: 10%; /* Adjust width to your preference */
+    margin-left: 27%; /* Space between info-container and leave-applications */
+    border: 1px solid #ddd;
+}
+.leave-summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+
+.leave-applications table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #706f6f;
+}
+
+.leave-applications th, .leave-applications td {
+    padding: 4px; /* Reduce padding to make the table more compact */
+    font-size: 12px; /* Reduce font size for smaller text */
+    text-align: center;
+    
+}
+
+.leave-applications th {
+    width: 70%;
+   padding: 20px;
+}
+/* Adjust this class for responsive design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .leave-summary,
+    .leave-applications {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+.status-icon {
+    font-size: 1.2em;
+}
+
+.check-icon {
+    color: purple;
+}
+
+.refresh-icon {
+    color: blue;
+}
+
+.details-container {
+    margin-top: 20px;
+}
+
+.notes-probation-salary {
+    display: flex;
+    justify-content: space-between;
+}
+
+.notes-section, .probation-section, .salary-section {
+    width: 32%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.notes-header, .probation-header, .salary-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    top: 0;
+}
+
+.notes-container {
+    width: 70%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    height: 200px;
+
+}
+
+.notes-container h3 {
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+    color: black;
+    top: 0;
+}
+
+.note-item {
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    height: 50px;
+}
+
+.note-item strong {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1em;
+}
+
+.note-item p {
+    margin: 0;
+    font-size: 12px;
+    line-height: 1.4;
+    color: black;
+}
+
+.note-timestamp {
+    display: block;
+    margin-top: 5px;
+    font-size: 12px;
+    color: #888;
+}
+
+.probation-bar {
+    position: relative;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+}
+
+.probation-progress {
+    height: 100%;
+    background-color: purple;
+    border-radius: 10px;
+}
+
+.probation-percentage {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-weight: bold;
+}
+
+.salary-details {
+    display: flex;
+    justify-content: space-around;
+}
+
+.salary-item {
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #c6c1c1;
+}
+.salary-det{
+    text-align: center;
+    font-size: 14px;
+    color: black;
+}
+
+.salary-amount {
+    font-size: 15px;
+    font-weight: bold;
+    color: #0066cc;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.action-buttons button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    background-color: #007bff;
+    cursor: pointer;
+}
+
+.action-buttons .unlock-user {
+    background-color: #28a745;
+    height: 27px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.action-buttons .view-profile {
+    background-color: #007bff;
+    height: 27px;
+    font-size: 12px;
+    text-align: center;
+}
